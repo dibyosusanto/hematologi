@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <title>Hasil Prediksi</title>
+    </head>
+    <body class="bg-dark">
+        <div class="container">
+            <div class="align-content-center m-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-dark">
+                        <h2 class="text-center"> Hasil Klasifikasi Pasien </h2>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="text-center">
+                            {%if data == 'out' %}
+                                Anda disarankan untuk Rawat Jalan
+                            {%elif data == 'in' %}
+                                Anda disarankan untuk Rawat Inap
+                            {%endif%}
+                        </h1>
+                        <div class="row mb-2">
+                            <div class="col-2"><label class="font-weight-bold" class="form-control">Haematocrit</label></div>
+                            <div class="col-4"> {{haematocritVal}}</div>
+                            <div class="col-4">
+                                {%if haematocrit == 0%}
+                                    <span class="badge badge-pill badge-warning">Rendah</span>
+                                {%elif haematocrit == 1%}
+                                    <span class="badge badge-pill badge-success">Normal</span>
+                                {%else%}
+                                    <span class="badge badge-pill badge-warning">Tinggi</span>
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-2"><label class="font-weight-bold" class="form-control">Haemoglobins</label></div>
+                            <div class="col-4">{{haemoglobinsVal}} </div>
+                            <div class="col-4">
+                                {%if haemoglobins == 0%}
+                                    <span class="badge badge-pill badge-warning">Rendah</span>
+                                {%elif haemoglobins == 1%}
+                                    <span class="badge badge-pill badge-success">Normal</span>
+                                {%else%}
+                                    <span class="badge badge-pill badge-warning">Tinggi</span>
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-2"><label class="font-weight-bold" class="form-control">Erythrocyte</label></div>
+                            <div class="col-4">{{erythrocyteVal}} </div>
+                            <div class="col-4">
+                                {%if erythrocyte == 0%}
+                                    <span class="badge badge-pill badge-warning">Rendah</span>
+                                {%elif erythrocyte == 1%}
+                                    <span class="badge badge-pill badge-success">Normal</span>
+                                {%else%}
+                                    <span class="badge badge-pill badge-warning">Tinggi</span>
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-2"><label class="font-weight-bold" class="form-control">Leucocyte</label></div>
+                            <div class="col-4">{{leucocyteVal}}</div>
+                            <div class="col-4">
+                                {%if leucocyte == 0%}
+                                    <span class="badge badge-pill badge-warning">Rendah</span>
+                                {%elif leucocyte == 1%}
+                                    <span class="badge badge-pill badge-success">Normal</span>
+                                {%else%}
+                                    <span class="badge badge-pill badge-warning">Tinggi</span>
+                                {%endif%}
+                            </div>
+                            
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-2"><label class="font-weight-bold" class="form-control">Thrombocyte</label></div>
+                            <div class="col-4">{{thrombocyteVal}}</div>
+                            <div class="col-4">
+                                {%if thrombocyte == 0%}
+                                    <span class="badge badge-pill badge-warning">Rendah</span>
+                                {%elif thrombocyte == 1%}
+                                    <span class="badge badge-pill badge-success">Normal</span>
+                                {%else%}
+                                    <span class="badge badge-pill badge-warning">Tinggi</span>
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-2"><label class="font-weight-bold" class="form-control">MCH</label></div>
+                            <div class="col-4">{{mchVal}}</div>
+                            <div class="col-4">
+                                {%if mch == 0%}
+                                    <span class="badge badge-pill badge-warning">Rendah</span>
+                                {%elif mch == 1%}
+                                    <span class="badge badge-pill badge-success">Normal</span>
+                                {%else%}
+                                    <span class="badge badge-pill badge-warning">Tinggi</span>
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-2"><label class="font-weight-bold" class="form-control">MCHC</label></div>
+                            <div class="col-4">{{mchcVal}}</div>
+                            <div class="col-4">
+                                {%if mchc == 0%}
+                                    <span class="badge badge-pill badge-warning">Rendah</span>
+                                {%elif mchc == 1%}
+                                    <span class="badge badge-pill badge-success">Normal</span>
+                                {%else%}
+                                    <span class="badge badge-pill badge-warning">Tinggi</span>
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-2"><label class="font-weight-bold" class="form-control">MCV</label></div>
+                            <div class="col-4">{{mcvVal}}</div>
+                            <div class="col-4">
+                                {%if mcv == 0%}
+                                    <span class="badge badge-pill badge-warning">Rendah</span>
+                                {%elif mcv == 1%}
+                                    <span class="badge badge-pill badge-success">Normal</span>
+                                {%else%}
+                                    <span class="badge badge-pill badge-warning">Tinggi</span>
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="text-center m-3">
+                            <a class="btn btn-primary" href="/">Kembali</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    </body>
+</html>
